@@ -19,3 +19,11 @@
 
 ### 12:00 PlayCanvas integrated with Baseline
 - import script wraps pre-built engine
+
+### 12:30 Phase 1 complete 3D assets
+![Cockpit view](https://cloud.githubusercontent.com/assets/9714275/7215766/2312e5cc-e5dd-11e4-8d3d-4c3eca6455c3.png)
+![Final ship](https://cloud.githubusercontent.com/assets/9714275/7215768/2313a55c-e5dd-11e4-94bf-83daf1eaa760.png)
+![Una Mesa](https://cloud.githubusercontent.com/assets/9714275/7215767/2313723a-e5dd-11e4-9527-bfc64173bfd6.png)
+
+### 13:00 Proven workflow with basic 3D rendering
+- rotating cube added to 3D space in engine
