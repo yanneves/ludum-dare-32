@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>{%=o.htmlWebpackPlugin.options.title || 'Webpack App'%}</title>
+  </head>
+  <body>
+
+    <script src="http://localhost:8080/webpack-dev-server.js"></script>
+    {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
+    <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
+    {% } %}
+
+  </body>
+</html>
