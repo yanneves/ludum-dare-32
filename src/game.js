@@ -40,6 +40,12 @@ game.on('update', function (deltaTime) {
   cube.rotate(10 * deltaTime, 20 * deltaTime, 30 * deltaTime)
 })
 
+// TODO: update?
+window.addEventListener('resize', function () {
+  // recalculate game canvas on window resize
+  game.resizeCanvas(canvas.width, canvas.height);
+})
+
 preload()
 create()
 update()
