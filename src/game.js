@@ -1,20 +1,45 @@
-import _ from 'underscore'
+import engine from '../engine/import'
+import preload from './loader'
+import { create, update } from './renderer'
 
 console.log('Hello, world!')
 
-import engine from '../engine/import'
+var canvas = document.getElementById('screen'),
+  game = new engine.Application(canvas, {})
 
-console.dir(engine)
+// TODO: boostrap?
+game.start()
 
-engine.prop = 'changed'
+// TODO: preloader?
+game.setCanvasFillMode(engine.FILLMODE_FILL_WINDOW)
+game.setCanvasResolution(engine.RESOLUTION_AUTO)
 
-console.log(engine.prop)
+// TODO: create?
+var cube = new engine.Entity()
+cube.addComponent('model', { type: 'box' })
 
-import preload from './loader'
-import { create, update } from './renderer'
+// TODO: create.camera?
+var camera = new engine.Entity()
+camera.addComponent('camera', {
+  clearColor: new engine.Color(0.1, 0.1, 0.1)
+})
+
+// TODO: create.lighting?
+var light = new engine.Entity()
+light.addComponent('light')
+
+game.root.addChild(cube)
+game.root.addChild(camera)
+game.root.addChild(light)
+
+camera.setPosition(0, 0, 3)
+light.setEulerAngles(45, 0, 0)
+
+// TODO: update?
+game.on('update', function (deltaTime) {
+  cube.rotate(10 * deltaTime, 20 * deltaTime, 30 * deltaTime)
+})
 
 preload()
 create()
 update()
-
-document.write('Hello, PlayCanvas!')

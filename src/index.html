@@ -3,10 +3,15 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title>{%=o.htmlWebpackPlugin.options.title || 'Webpack App'%}</title>
+    <style type="text/css">
+      canvas { position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+    </style>
   </head>
   <body>
 
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
+
+    <canvas id="screen"></canvas>
 
     <script src="engine/playcanvas.js"></script>
     {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
