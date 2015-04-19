@@ -3,5 +3,5 @@ console.info && console.info('PlayCanvas engine imported!')
 
 // ES6 module loader wrapper,
 // for pre-built PlayCanvas Engine
-const engine = pc
+const engine = window.pc
 export { engine as default }
