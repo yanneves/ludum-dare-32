@@ -24,9 +24,13 @@ module.exports = {
     ]
   },
 
+  resolve: {
+    alias: { 'engine': path.join(__dirname, 'engine/import.js') }
+  },
+
   plugins: [
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.CommonsChunkPlugin(['node_modules', 'engine'], 'engine.bundle.js'),
-    new htmlPlugin({ template: path.join(srcRoot, 'index.html') })
+    new htmlPlugin({ title: "Ship 'til You Flip", template: path.join(srcRoot, 'index.html') })
   ]
 }

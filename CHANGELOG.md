@@ -27,3 +27,6 @@
 
 ### 13:00 Proven workflow with basic 3D rendering
 - rotating cube added to 3D space in engine
+
+### 26:00 Successfully imported model from Blender
+- asteroid asset imported into game
