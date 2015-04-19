@@ -2,6 +2,7 @@ import engine from 'engine'
 
 // assets paths config
 export const assets = {
+  'shwip': 'assets/player/shwip/shwip.json',
   'asteroid_1': 'assets/asteroids/asteroid_1/asteroid_1.json'
 }
 
@@ -23,9 +24,31 @@ export function Camera () {
  */
 export function Light () {
   var light = new engine.Entity()
-  light.addComponent('light')
+  light.addComponent("light", {
+    type: "spot",
+    color: new engine.Color(1, 1, 1),
+    outerConeAngle: 60,
+    innerConeAngle: 40,
+    range: 100,
+    intensity: 1,
+    castShadows: true,
+    shadowBias: 0.005,
+    shadowResolution: 2048
+  })
 
   return light
+}
+
+/**
+ *  Player entity
+ *  @params resource
+ */
+export function Player (resource) {
+  var player = new engine.Entity()
+  player.addComponent('model')
+  player.model.model = resource
+
+  return player
 }
 
 /**
