@@ -11,6 +11,7 @@ game = new engine.Application(canvas, {})
 
 // bootstrap
 game.start()
+
 // bootstrap canvas
 game.canvas = canvas
 console.info && console.info('Bootstrap of game completed!')
